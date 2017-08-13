@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import promise from 'redux-promise'
 
-import { Grid } from 'semantic-ui-react'
+
 
 import SearchHeader from './components/search_header.js'
 import QuotesList from './components/quotes_list'
@@ -14,11 +14,9 @@ const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
-    <Grid centered columns={2}>
-      <Grid.Column>
+    <div>
         <SearchHeader />
         <QuotesList />
-      </Grid.Column>
-    </Grid>
+    </div>
   </Provider>
   , document.querySelector('.container'));

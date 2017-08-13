@@ -35,9 +35,13 @@ class QuotesList extends Component {
 
   render() {
     return(
-      <Item.Group className="quotes-list">
-        { this.renderQuotes() }
-      </Item.Group>
+      <Grid  centered columns={1}>
+        <Grid.Column>
+          <Item.Group className="quotes-list">
+            { this.renderQuotes() }
+          </Item.Group>
+        </Grid.Column>
+      </Grid>
     )
   }
 

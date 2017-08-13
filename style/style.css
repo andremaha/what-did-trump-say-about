@@ -11,10 +11,18 @@
     border-bottom: 1px solid black;
 }
 
-.quotes-list {
-    margin: 20px 0;
+.ui.items.quotes-list {
+    padding: 2em;
 }
 
 .ui.items>.item {
-    margin-bottom: 3em !important;
+    margin-botton: 3em !important;
+}
+
+/* DESKTOP ONLY */
+@media screen and (min-width: 800px) {
+    .ui.items.quotes-list {
+        margin: auto;
+        width: 50%;
+    }
 }
