@@ -1,0 +1,20 @@
+.container {
+    margin-top: 20px;
+}
+
+.search-header {
+    margin-bottom: 4em;
+}
+
+.search-input {
+    margin: 0 5px 0 10px;
+    border-bottom: 1px solid black;
+}
+
+.quotes-list {
+    margin: 20px 0;
+}
+
+.ui.items>.item {
+    margin-bottom: 3em !important;
+}
