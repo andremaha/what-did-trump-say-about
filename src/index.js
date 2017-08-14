@@ -9,6 +9,7 @@ import promise from 'redux-promise'
 import SearchHeader from './components/search_header.js'
 import QuotesList from './components/quotes_list'
 import reducers from './reducers';
+import QuoteCard from './components/quote_card'
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 

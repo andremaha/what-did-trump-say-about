@@ -3,6 +3,7 @@ import moment from 'moment'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Grid, Icon, Image as ImageComponent, Item, Divider } from 'semantic-ui-react'
+import QuoteCard from './quote_card'
 
 
 class QuotesList extends Component {
@@ -33,14 +34,34 @@ class QuotesList extends Component {
     })
   }
 
+  renderCardQuotes() {
+
+    return _.map( this.props.quotes, quote => {
+
+      let gifIndex = _.random(this.props.gifs.length - 1)
+      const gif = this.props.gifs[gifIndex].images.downsized_large.url
+
+      return (
+        <Grid.Column>
+          <QuoteCard
+            image={ gif }
+            key={ quote.quote_id }
+            source={ quote._embedded.source[0].url }
+            author={ quote._embedded.author[0].name }
+            content={ quote.value }
+            day={ moment(quote.created_at).format('D') }
+            month={ moment(quote.created_at).format('MMM') }
+            year={ moment(quote.created_at).format('YY') }
+          />
+        </Grid.Column>
+      )
+    })
+  }
+
   render() {
     return(
-      <Grid  centered columns={1}>
-        <Grid.Column>
-          <Item.Group className="quotes-list">
-            { this.renderQuotes() }
-          </Item.Group>
-        </Grid.Column>
+      <Grid stackable columns={2}>
+        { this.renderCardQuotes() }
       </Grid>
     )
   }
