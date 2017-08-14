@@ -49,9 +49,9 @@ class QuotesList extends Component {
             source={ quote._embedded.source[0].url }
             author={ quote._embedded.author[0].name }
             content={ quote.value }
-            day={ moment(quote.created_at).format('D') }
-            month={ moment(quote.created_at).format('MMM') }
-            year={ moment(quote.created_at).format('YY') }
+            day={ moment(quote.appeared_at).format('D') }
+            month={ moment(quote.appeared_at).format('MMM') }
+            year={ moment(quote.appeared_at).format('YY') }
           />
         </Grid.Column>
       )
